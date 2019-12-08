@@ -1,4 +1,4 @@
-package Object.Firstexercise;
+package Object.FirstExercise;
 
 /*1. Grocery Shopping
         Create class Product, it should contain at least two fields – name and price.
@@ -34,8 +34,6 @@ public class ProductMain {
 
             System.out.println("enter price");
             int productPrice = inputNum.nextInt();
-
-            new Product(productName, productPrice);
 
             products[index] = new Product(productName, productPrice);
             index++;

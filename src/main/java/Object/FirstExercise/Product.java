@@ -1,4 +1,4 @@
-package Object.Firstexercise;
+package Object.FirstExercise;
 
 public class Product {
     private String name;
