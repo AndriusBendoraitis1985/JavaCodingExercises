@@ -15,9 +15,9 @@ public class SeventhExercise {
 
         while (secondNum != 0) {
 
-            double answer = firstNum/secondNum;
+            double answer =  firstNum/secondNum;
 
-            System.out.println("jusu atsakymas yra " +answer);
+            System.out.printf("jusu atsakymas yra %.3f \n",answer);
 
             firstNum=answer;
 
