@@ -5,9 +5,7 @@ package Object.FiftExercise;
         pozicijų į priekį abėcėlėje. Pavyzdžiui, jei raidės poslinkis būtų 5,
         tai raidė c būtų pakeista raide h, raidė k pakeista į p ir t.t.*/
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class FiftExercise {
 
@@ -23,6 +21,9 @@ public class FiftExercise {
             char[] codedText = getCodedText(originalText);
 
             System.out.println(codedText);
+
+            writeCodedTextToFile(codedText);
+
     }
 
     private static char[] getCharFromFile() {
@@ -40,10 +41,28 @@ public class FiftExercise {
         for (int i = 0; i < originalText.length; i++) {
             if (originalText[i] == ' ') {
                 codedText[i] = ' ';
-            } else {
-                codedText[i] = (char) (originalText[i] + 5);
+            }
+            else if (originalText[i] == ',') {
+                codedText[i] = ',';
+            }
+            else {
+                if (originalText[i]>'u'){
+                    codedText[i] = (char) ((originalText[i]-22)+1);
+                }else {
+                    codedText[i] = (char) (originalText[i] + 5);
+                }
             }
         }
         return codedText;
+    }
+
+    private static void writeCodedTextToFile(char[]codedText){
+            try (BufferedWriter bw = new BufferedWriter(new FileWriter(OUTPUT_FILE_LOCATION))){
+                bw.write(codedText);
+                System.out.println("I faila irasyta");
+            } catch (IOException e) {
+                System.out.println("Klaida irasant i faila");
+            }
+
     }
 }
