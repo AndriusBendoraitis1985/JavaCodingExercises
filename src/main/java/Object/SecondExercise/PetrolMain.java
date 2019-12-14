@@ -23,6 +23,7 @@ public class PetrolMain {
 */
         double sumPrice = 0;
         double sumLitres = 0;
+        double finalSUm = 0;
 
         boolean repeat = true;
 
@@ -32,8 +33,10 @@ public class PetrolMain {
             System.out.println("iveskite kuro kieki");
            double litres = input.nextDouble();
 
-            sumLitres = sumLitres + litres;
-            sumPrice = sumPrice + price;
+    //        sumLitres = sumLitres + litres;
+     //       sumPrice = sumPrice + price;
+            finalSUm=finalSUm +(litres*price);
+
             repeat = false;
 
             System.out.println("jei norite testi, -> continue");
@@ -43,16 +46,16 @@ public class PetrolMain {
                 repeat = true;
             }
         }
+        System.out.println(finalSUm);
         System.out.println("iveskite pinigu kieki, kuri mokate");
         double customerPrice = input.nextDouble();
-        if (customerPrice==sumPrice){
+        if (customerPrice==finalSUm){
             System.out.println("sumokejote lygiai tiek kiek reikia");
-        } else if (customerPrice >sumPrice){
-            System.out.println("sumokejote daugiau, jusu graza: "+ (customerPrice-sumPrice)+ " eur");
-        } else if (customerPrice<sumPrice){
-            System.out.println("sumoketu pinigu nepakanka, prasoma papildomai sumoketi: "+ (sumPrice-customerPrice)+ " eur");
+        } else if (customerPrice >finalSUm){
+            System.out.println("sumokejote daugiau, jusu graza: "+ (customerPrice-finalSUm)+ " eur");
+        } else if (customerPrice<finalSUm){
+            System.out.println("sumoketu pinigu nepakanka, prasoma papildomai sumoketi: "+ (finalSUm-customerPrice)+ " eur");
         }
-
     }
 }
 
