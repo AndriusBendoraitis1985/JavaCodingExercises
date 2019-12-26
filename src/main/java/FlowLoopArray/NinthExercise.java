@@ -1,5 +1,12 @@
 package FlowLoopArray;
 
+/*9. Write an application that will find biggest value within array of int variables.
+*
+* check your application using randomly generated array (use Random class),
+check your application at least 5 times in a loop (generate random array ->
+* print array to the console -> find biggest value -> print biggest value -> manually verify results).
+*/
+
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;

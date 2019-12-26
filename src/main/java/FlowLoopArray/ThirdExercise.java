@@ -1,5 +1,7 @@
 package FlowLoopArray;
 
+/*3. As above but only one of the values has to be greater, equal or lower than 30.*/
+
 import java.util.Scanner;
 
 public class ThirdExercise {

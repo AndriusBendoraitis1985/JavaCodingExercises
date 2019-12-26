@@ -1,5 +1,9 @@
 package Object.FourthExercise;
 
+/*Parašyti programą, kuri pasakytų ar žodis yra palindromas ar ne.
+        Palindromas yra žodis ar raidžių kratinys, kuris skaitomas vienodai tiek apsukus,
+        tiek neapsukus žodžio. Pvz.: abcba - palindromas.*/
+
 import java.util.Scanner;
 
 public class FourthExercise {

@@ -1,5 +1,9 @@
 package Object.ThirdExercise;
 
+/*Tic Tac Toe. Remember – keep it simple.
+        You may use two-dimensional array to store the results and empty fields.
+        Prepare a method to view present state of the "board".*/
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -21,9 +25,7 @@ public class TicTacToeMain {
 
         boolean cpuRepeat = true;
         boolean tillVictory = true;
-
-
-        while (tillVictory) {
+       while (tillVictory) {
 
             userInput(initial);
 
@@ -104,7 +106,7 @@ public class TicTacToeMain {
             int enterRow = playerInput.nextInt() - 1;
             System.out.println("Prasome ivesti stulpeli, kur desite X");
             int enterColumn = playerInput.nextInt() - 1;
-            if (enterRow < 3 && enterColumn < 3) {
+            if (enterRow < 3 && enterColumn < 3 && enterRow>-1 && enterColumn>-1) {
                 if (initial[enterRow][enterColumn].equals("_")) {
                     initial[enterRow][enterColumn] = "X";
                     break;
@@ -141,6 +143,4 @@ public class TicTacToeMain {
             }
         }
     }
-
-
 }

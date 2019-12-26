@@ -1,5 +1,7 @@
 package FlowLoopArray;
 
+/*1. Write an application that will show if entered value is greater, equal or lower than 30.*/
+
 import java.util.Scanner;
 
 public class FirstExercise {
