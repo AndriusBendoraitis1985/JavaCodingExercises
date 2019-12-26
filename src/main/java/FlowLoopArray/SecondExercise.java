@@ -1,5 +1,8 @@
 package FlowLoopArray;
 
+/*2. As above but compare two values at the same time.
+        Verify if first value is greater than 30 and second value is greater than 30, and so on.*/
+
 import java.util.Scanner;
 
 public class SecondExercise {

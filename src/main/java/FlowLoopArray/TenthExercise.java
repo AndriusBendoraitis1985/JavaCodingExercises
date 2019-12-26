@@ -1,5 +1,7 @@
 package FlowLoopArray;
 
+/*10. Write an application that will find the longest char sequence within an array of type String.
+        Test it in the same way as you have done in the previous exercise. How will you generate random char sequences?*/
 
 import org.apache.commons.lang3.RandomStringUtils;
 

@@ -1,5 +1,8 @@
 package FlowLoopArray;
 
+/*4. Write an application that for any entered number between 0 and 9 will provide it's name.
+        For example for "3" program should print "three".*/
+
 import java.util.Scanner;
 
 public class FourthExercise {

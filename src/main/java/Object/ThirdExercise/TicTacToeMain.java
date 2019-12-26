@@ -1,5 +1,9 @@
 package Object.ThirdExercise;
 
+/*Tic Tac Toe. Remember – keep it simple.
+        You may use two-dimensional array to store the results and empty fields.
+        Prepare a method to view present state of the "board".*/
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -18,56 +22,20 @@ public class TicTacToeMain {
             System.out.println();
         }
         System.out.println();
-        Scanner playerInput = new Scanner(System.in);
-        Random cpuInput = new Random();
-
-        int count = 0;
 
         boolean cpuRepeat = true;
         boolean tillVictory = true;
+       while (tillVictory) {
 
-        while (tillVictory) {
-            while (true) {
-                System.out.println("ZAIDEJO EJIMAS");
-                System.out.println("Prasome ivesti eilute, kur desite X");
-                int enterRow = playerInput.nextInt() - 1;
-                System.out.println("Prasome ivesti stulpeli, kur desite X");
-                int enterColumn = playerInput.nextInt() - 1;
-                if (enterRow < 3 && enterColumn < 3) {
-                    if (initial[enterRow][enterColumn].equals("_")) {
-                        initial[enterRow][enterColumn] = "X";
-                        break;
-                    }
-                    System.out.println("Sita vieta jau pazymeta, pasirink kita!");
-                } else {
-                    System.out.println("Blogai ivestos kordinates, pasirink kitas");
-                }
-            }
+            userInput(initial);
 
-            for (String[] strings : initial) {
-                for (String string : strings) {
-                    if (string.equals("_")) {
-                        count++;
-                    }
-                }
-            }
-            if (count < 1) {
+            if (getCount(initial) < 1) {
                 cpuRepeat = false;
                 tillVictory = false;
-                System.out.println("ZAIDIMAS BAIGTAS, NIEKAS NELAIMEJO");
+                System.out.println("ZAIDIMAS BAIGTAS");
             }
-            count = 0;
 
-            while (cpuRepeat) {
-                int compRow = cpuInput.nextInt(3);
-                int compColumn = cpuInput.nextInt(3);
-//                System.out.printf("Kompas ivede %s, %s", compRow + 1, compColumn + 1); // KOPIUTERIO SPEJIMU SPAUSDINIMAS
-//                System.out.println(" kurio reiškmė buvo: " + intermediate[compRow][compColumn]); // KOPIUTERIO SPEJIMU SPAUSDINIMAS
-                if (initial[compRow][compColumn].equals("_")) {
-                    initial[compRow][compColumn] = "O";
-                    break;
-                }
-            }
+            cpuInput(initial, cpuRepeat);
 
             for (String[] strings : initial) {
                 for (String string : strings) {
@@ -106,7 +74,7 @@ public class TicTacToeMain {
                 }
             }
 
-            if (initial[0][0].equals(initial[1][1]) && initial[1][1].equals(initial[2][2])){
+            if (initial[0][0].equals(initial[1][1]) && initial[1][1].equals(initial[2][2])) {
                 if (initial[0][0].equals("X")) {
                     System.out.println("LAIMEJO ZAIDEJAS!!!");
                     break;
@@ -116,7 +84,7 @@ public class TicTacToeMain {
                     break;
                 }
             }
-            if (initial[2][0].equals(initial[1][1]) && initial[1][1].equals(initial[0][2])){
+            if (initial[2][0].equals(initial[1][1]) && initial[1][1].equals(initial[0][2])) {
                 if (initial[2][0].equals("X")) {
                     System.out.println("LAIMEJO ZAIDEJAS!!!");
                     break;
@@ -125,6 +93,53 @@ public class TicTacToeMain {
                     System.out.println("LAIMEJO KOMPIUTERIS!!!");
                     break;
                 }
+            }
+        }
+    }
+
+    private static void userInput(String[][] initial) {
+        Scanner playerInput = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("ZAIDEJO EJIMAS");
+            System.out.println("Prasome ivesti eilute, kur desite X");
+            int enterRow = playerInput.nextInt() - 1;
+            System.out.println("Prasome ivesti stulpeli, kur desite X");
+            int enterColumn = playerInput.nextInt() - 1;
+            if (enterRow < 3 && enterColumn < 3 && enterRow>-1 && enterColumn>-1) {
+                if (initial[enterRow][enterColumn].equals("_")) {
+                    initial[enterRow][enterColumn] = "X";
+                    break;
+                }
+                System.out.println("Sita vieta jau pazymeta, pasirink kita!");
+            } else {
+                System.out.println("Blogai ivestos kordinates, pasirink kitas");
+            }
+        }
+    }
+
+    private static int getCount(String[][] initial) {
+        int count = 0;
+        for (String[] strings : initial) {
+            for (String string : strings) {
+                if (string.equals("_")) {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+
+    private static void cpuInput(String[][] initial, boolean cpuRepeat) {
+        Random cpuInput = new Random();
+        while (cpuRepeat) {
+            int compRow = cpuInput.nextInt(3);
+            int compColumn = cpuInput.nextInt(3);
+//                System.out.printf("Kompas ivede %s, %s", compRow + 1, compColumn + 1); // KOPIUTERIO SPEJIMU SPAUSDINIMAS
+//                System.out.println(" kurio reiškmė buvo: " + intermediate[compRow][compColumn]); // KOPIUTERIO SPEJIMU SPAUSDINIMAS
+            if (initial[compRow][compColumn].equals("_")) {
+                initial[compRow][compColumn] = "O";
+                break;
             }
         }
     }

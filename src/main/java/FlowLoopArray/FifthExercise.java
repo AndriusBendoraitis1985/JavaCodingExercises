@@ -1,5 +1,10 @@
 package FlowLoopArray;
 
+/*5. Using nested for loops draw (parents loop iterator should be called "row", child – "column"):
+        triangle,
+        *rectangle with diagonals,
+        **Christmas tree.*/
+
 public class FifthExercise {
 
     public static void main(String[] args) {
